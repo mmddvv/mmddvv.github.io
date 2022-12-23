@@ -23,5 +23,14 @@
     "hexo-server": "^3.0.0",
     "hexo-theme-landscape": "^0.0.3",
     "yuque-hexo": "^1.9.5"
+  },
+  "yuqueConfig": {
+    "postPath": "source/_posts",
+    "baseUrl": "https://www.yuque.com/api/v2",
+    "login": "leonyan",
+    "repo": "bbyn23",
+    "concurrency": 5,
+    "onlyPublished": false,
+    "onlyPublic": false
   }
 }
