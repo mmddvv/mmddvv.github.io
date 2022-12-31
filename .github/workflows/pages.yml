@@ -31,8 +31,10 @@ jobs:
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
         run: npm install
+      - name: Sync
+        run: npm run sync
       - name: BUILD
-        run: yuque-hexo sync && npm run build
+        run: npm run build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
