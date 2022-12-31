@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>搭建 Pluto 测试环境 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="0 介绍Pluto 是一个独立的用户管理系统，它可以用来搭建一个测试环境，并且可以自动化地搭建一个简单的网站。 这个项目源自于简单日语团队的其中一位创始人: leeif。 1 环境需求 Go Version，需要 &gt;&#x3D; 1.13, &lt;&#x3D; 1.16 MySQL，5.7+ Mac 系统的话，可以通过 brew 来安装 如果像我这样，用 brew 的方法安装有问题的话，可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建 Pluto 测试环境">
+<meta property="og:url" content="http://example.com/2022/12/21/%E6%90%AD%E5%BB%BA%20Pluto%20%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="0 介绍Pluto 是一个独立的用户管理系统，它可以用来搭建一个测试环境，并且可以自动化地搭建一个简单的网站。 这个项目源自于简单日语团队的其中一位创始人: leeif。 1 环境需求 Go Version，需要 &gt;&#x3D; 1.13, &lt;&#x3D; 1.16 MySQL，5.7+ Mac 系统的话，可以通过 brew 来安装 如果像我这样，用 brew 的方法安装有问题的话，可">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-12-21T07:36:56.000Z">
+<meta property="article:modified_time" content="2022-12-31T14:30:26.129Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-搭建 Pluto 测试环境" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/12/21/%E6%90%AD%E5%BB%BA%20Pluto%20%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/" class="article-date">
+  <time class="dt-published" datetime="2022-12-21T07:36:56.000Z" itemprop="datePublished">2022-12-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      搭建 Pluto 测试环境
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="0-介绍"><a href="#0-介绍" class="headerlink" title="0 介绍"></a>0 介绍</h1><p>Pluto 是一个独立的用户管理系统，它可以用来搭建一个测试环境，并且可以自动化地搭建一个简单的网站。 这个项目源自于简单日语团队的其中一位创始人: <a target="_blank" rel="noopener" href="https://github.com/leeif">leeif</a>。</p>
+<h1 id="1-环境需求"><a href="#1-环境需求" class="headerlink" title="1 环境需求"></a>1 环境需求</h1><ol>
+<li>Go Version，需要 &gt;&#x3D; 1.13, &lt;&#x3D; 1.16</li>
+<li>MySQL，5.7+<ol>
+<li>Mac 系统的话，可以通过 brew 来安装</li>
+<li>如果像我这样，用 brew 的方法安装有问题的话，可以下载 DMG 文件来安装，不过官方已经不提供下载了，我找到的是：<a target="_blank" rel="noopener" href="http://ftp.iij.ad.jp/pub/db/mysql/Downloads/MySQL-5.7/mysql-5.7.25-macos10.14-x86_64.dmg">http://ftp.iij.ad.jp/pub/db/mysql/Downloads/MySQL-5.7/mysql-5.7.25-macos10.14-x86_64.dmg</a></li>
+</ol>
+</li>
+</ol>
+<h1 id="2-安装和启动"><a href="#2-安装和启动" class="headerlink" title="2. 安装和启动"></a>2. 安装和启动</h1><ol>
+<li>git clone <a href="mailto:git@github.com">git@github.com</a>:MuShare&#x2F;pluto.git</li>
+<li>打开 pluto 目录，在项目根目录创建配置文件，config.yaml 或者 config.json，这边采用 yaml 格式</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">misc:</span></span><br><span class="line">  <span class="attr">env:</span> <span class="string">&quot;dev&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8080</span></span><br><span class="line">  <span class="attr">skip_register_verify_mail:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">database:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&quot;mysql&quot;</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">&quot;localhost&quot;</span></span><br><span class="line">  <span class="attr">user:</span> <span class="string">&quot;root&quot;</span></span><br><span class="line">  <span class="attr">password:</span> <span class="string">&quot;12345678&quot;</span></span><br><span class="line">  <span class="attr">db:</span> <span class="string">&quot;pluto&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">log:</span></span><br><span class="line">  <span class="attr">file:</span> <span class="string">&quot;/tmp/pluto-test.log&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>需要创建一些表格，pluto 提供了 migrate 的命令行</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">make migrate-binary-build</span><br><span class="line">./bin/pluto-migrate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果成功的话会在终端看到SUCCESS的提示</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>启动服务</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make server-binary-build</span><br><span class="line">./bin/pluto-server --config.file config.yaml</span><br></pre></td></tr></table></figure>
+
+<p>服务器启动之后可以访问 <a target="_blank" rel="noopener" href="http://localhost:8010/web/login">http://localhost:8010/web/login</a> 具体的 API 可以查看 pluto&#x2F;docs&#x2F;api.md 所有的 API 请求都是 JSON 格式。</p>
+<ol start="5">
+<li>新建 Application 如果没有新建 Application 的话，那么就无法进行后续的操作了</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST \</span><br><span class="line">  -H <span class="string">&#x27;Content-Type: application/json&#x27;</span> \</span><br><span class="line">  -d <span class="string">&#x27;&#123;&quot;name&quot;: &quot;easyjapanese&quot;&#125;&#x27;</span> \</span><br><span class="line">  http://127.0.0.1:8010/v1/rbac/application/create</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>新建用户 Pluto 目前支持的用户注册方式是邮件，还可以绑定微信，谷歌和苹果账号，这边采用邮件注册。 在 config 里面配置了 skip_register_verify_mail，所以不需要验证邮箱。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST \</span><br><span class="line">  -H <span class="string">&#x27;Content-Type: application/json&#x27;</span> \</span><br><span class="line">  -d <span class="string">&#x27;&#123;&quot;mail&quot;:&quot;helloworld@gmail.com&quot;, &quot;name&quot;:&quot;helloworld&quot;, &quot;password&quot;:&quot;123456&quot;, &quot;app_id&quot;: &quot;easyjapanese&quot;, &quot;user_id&quot;: &quot;helloworld&quot; &#125;&#x27;</span> \</span><br><span class="line">  http://127.0.0.1:8010/v1/user/register</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>登录 通过登录，我们可以获取 refresh_token 和 access_token。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST \</span><br><span class="line">  -H <span class="string">&#x27;Content-Type: application/json&#x27;</span> \</span><br><span class="line">  -d <span class="string">&#x27;&#123;&quot;account&quot;:&quot;helloworld@gmail.com&quot;, &quot;password&quot;:&quot;123456&quot;, &quot;device_id&quot;:null, &quot;app_id&quot;:&quot;easyjapanese&quot;&#125;&#x27;</span> \</span><br><span class="line">  http://127.0.0.1:8010/v1/user/login/account</span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li>删除用户 删除的时候我们需要 JWT，也就是登录的时候获得的 access_token，将这个 Token 放在请求头里面。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST \</span><br><span class="line">  -H <span class="string">&#x27;Content-Type: application/json&#x27;</span> \</span><br><span class="line">  -H <span class="string">&quot;Authorization: Bearer <span class="variable">$access_token</span>&quot;</span> \</span><br><span class="line">  http://127.0.0.1:8010/v1/user/delete</span><br></pre></td></tr></table></figure>
+
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<li><a target="_blank" rel="noopener" href="https://linuxize.com/post/curl-post-request/">https://linuxize.com/post/curl-post-request/</a></li>
+<li><a target="_blank" rel="noopener" href="https://reqbin.com/req/c-dwjszac0/curl-post-json-example">https://reqbin.com/req/c-dwjszac0/curl-post-json-example</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/12/21/%E6%90%AD%E5%BB%BA%20Pluto%20%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/" data-id="clcc1jpon0004kxok7ign7e0m" data-title="搭建 Pluto 测试环境" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/12/22/%E5%9C%A8%E8%AF%AD%E9%9B%80%E4%B8%8A%E4%B9%A6%E5%86%99%EF%BC%8C%E9%80%9A%E8%BF%87hexo%E6%A1%A5%E6%8E%A5%E6%9D%A5%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          在语雀上书写，通过hexo桥接来发布博客
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/12/21/%E5%9C%A8%E5%90%8C%E4%B8%80%E5%8F%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E8%B4%A6%E6%88%B7%E6%9D%A5%E8%AE%BF%E9%97%AEgit/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">在同一台设备上创建多个账户来访问git</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/12/31/iOS%E8%8E%B7%E5%8F%96%E8%AE%BE%E5%A4%87%E7%9A%84sysdiagnose%E7%9A%84%E6%96%B9%E6%B3%95/">iOS获取设备的sysdiagnose的方法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/12/26/0-2%E5%B2%81%E6%8E%A5%E7%A7%8D%E7%96%AB%E8%8B%97%E7%9A%84%E4%B8%8D%E5%90%8C/">0-2岁接种疫苗的不同</a>
+          </li>
+        
+          <li>
+            <a href="/2022/12/22/%E5%9C%A8%E8%AF%AD%E9%9B%80%E4%B8%8A%E4%B9%A6%E5%86%99%EF%BC%8C%E9%80%9A%E8%BF%87hexo%E6%A1%A5%E6%8E%A5%E6%9D%A5%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2/">在语雀上书写，通过hexo桥接来发布博客</a>
+          </li>
+        
+          <li>
+            <a href="/2022/12/21/%E6%90%AD%E5%BB%BA%20Pluto%20%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/">搭建 Pluto 测试环境</a>
+          </li>
+        
+          <li>
+            <a href="/2022/12/21/%E5%9C%A8%E5%90%8C%E4%B8%80%E5%8F%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E8%B4%A6%E6%88%B7%E6%9D%A5%E8%AE%BF%E9%97%AEgit/">在同一台设备上创建多个账户来访问git</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

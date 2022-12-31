@@ -4,15 +4,28 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>在语雀上书写，通过hexo桥接来发布博客 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="1. 前言终极懒癌，不断在寻找一个比较适合自己的写作解决方案，感觉不解决就无法提笔写作。市面上相关的一些服务或工具主要分为几个部分：静态站点生成工具 + mardown 书写工具 + 静态页面托管站的组合。 1.1 常见静态站点管理工具 Jekyll hexo hugo  1.2 Markdown 书写工具 Typora VSCode &#x2F; Sublime Text &#x2F; Vim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在语雀上书写，通过hexo桥接来发布博客">
+<meta property="og:url" content="http://example.com/2022/12/22/%E5%9C%A8%E8%AF%AD%E9%9B%80%E4%B8%8A%E4%B9%A6%E5%86%99%EF%BC%8C%E9%80%9A%E8%BF%87hexo%E6%A1%A5%E6%8E%A5%E6%9D%A5%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. 前言终极懒癌，不断在寻找一个比较适合自己的写作解决方案，感觉不解决就无法提笔写作。市面上相关的一些服务或工具主要分为几个部分：静态站点生成工具 + mardown 书写工具 + 静态页面托管站的组合。 1.1 常见静态站点管理工具 Jekyll hexo hugo  1.2 Markdown 书写工具 Typora VSCode &#x2F; Sublime Text &#x2F; Vim">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/jpeg/174310/1671719728233-7a438390-6c42-4754-b84f-3f32ef4b9a13.jpeg#averageHue=%23fafafa&clientId=u0f382739-1fa8-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=uecbbe1ab&margin=%5Bobject%20Object%5D&name=yuque_diagram.jpg&originHeight=644&originWidth=1190&originalType=binary%E2%88%B6=1&rotation=0&showTitle=false&size=81912&status=done&style=none&taskId=u38cf65b9-567a-4c63-bb77-06acf95130e&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/174310/1671760723764-7d0b5249-8113-4dcc-a2d6-88d83c0e5255.png#averageHue=%23fefefe&clientId=uf1042404-ea47-4&crop=0&crop=0&crop=1&crop=1&from=drop&id=ub193aea8&margin=%5Bobject%20Object%5D&name=github.com_new.png&originHeight=1330&originWidth=1152&originalType=binary%E2%88%B6=1&rotation=0&showTitle=false&size=201288&status=done&style=none&taskId=uc10e233d-60b7-4f22-93ec-067d61736d2&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/174310/1671762314212-4bfe548d-c76d-489f-a6b2-44e227b091ab.png#averageHue=%23fcf8f8&clientId=uf1042404-ea47-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=524&id=u07633027&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1048&originWidth=1224&originalType=binary%E2%88%B6=1&rotation=0&showTitle=false&size=109116&status=done&style=none&taskId=u40a2bda9-604b-4a43-ba10-3c09f2e16c9&title=&width=612">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/174310/1671762187414-5c6f5ba1-91e1-4073-8310-8fc7662f76ac.png#averageHue=%23fefefe&clientId=uf1042404-ea47-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=435&id=u594ac2f6&margin=%5Bobject%20Object%5D&name=image.png&originHeight=870&originWidth=1000&originalType=binary%E2%88%B6=1&rotation=0&showTitle=false&size=98777&status=done&style=none&taskId=u85d19c21-d5a0-449c-8f23-487e33151da&title=&width=500">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/174310/1671762530869-dd5444a2-b1be-46eb-99cd-61e5903adfdb.png#averageHue=%23fbfcfc&clientId=uf1042404-ea47-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=378&id=u6bab856f&margin=%5Bobject%20Object%5D&name=image.png&originHeight=756&originWidth=1414&originalType=binary%E2%88%B6=1&rotation=0&showTitle=false&size=172089&status=done&style=none&taskId=u1889d862-1578-4860-8216-a82c98e98ec&title=&width=707">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/174310/1671762769023-89e28a6d-8fa4-4e71-8a7a-aae36d5c3580.png#averageHue=%23faf2ef&clientId=uf1042404-ea47-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=376&id=u56c09326&margin=%5Bobject%20Object%5D&name=image.png&originHeight=752&originWidth=926&originalType=binary%E2%88%B6=1&rotation=0&showTitle=false&size=196273&status=done&style=none&taskId=ud05d64e4-f79c-434f-a3ad-e9a603a25f6&title=&width=463">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/174310/1672495855271-0d055f5e-f082-4ca2-92e3-ca38a4582815.png#averageHue=%23c8c9c8&clientId=u452beebc-5c63-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=143&id=u88500b0e&margin=%5Bobject%20Object%5D&name=image.png&originHeight=286&originWidth=1442&originalType=binary%E2%88%B6=1&rotation=0&showTitle=false&size=146330&status=done&style=none&taskId=u28e1b011-fe40-4cce-b65f-943fe4b5b31&title=&width=721">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/174310/1672496303425-5dbbcc4c-ecd4-48ff-92de-d43d7863d0a2.png#averageHue=%23f3f8f2&clientId=u452beebc-5c63-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=741&id=u86187f48&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1482&originWidth=2428&originalType=binary%E2%88%B6=1&rotation=0&showTitle=false&size=923689&status=done&style=none&taskId=ud5d7e459-6879-4972-a7b9-128e97a34d5&title=&width=1214">
+<meta property="article:published_time" content="2022-12-22T08:55:33.000Z">
+<meta property="article:modified_time" content="2022-12-31T14:30:26.129Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2022/jpeg/174310/1671719728233-7a438390-6c42-4754-b84f-3f32ef4b9a13.jpeg#averageHue=%23fafafa&clientId=u0f382739-1fa8-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=uecbbe1ab&margin=%5Bobject%20Object%5D&name=yuque_diagram.jpg&originHeight=644&originWidth=1190&originalType=binary%E2%88%B6=1&rotation=0&showTitle=false&size=81912&status=done&style=none&taskId=u38cf65b9-567a-4c63-bb77-06acf95130e&title=">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -69,199 +82,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-iOS获取设备的sysdiagnose的方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/12/31/iOS%E8%8E%B7%E5%8F%96%E8%AE%BE%E5%A4%87%E7%9A%84sysdiagnose%E7%9A%84%E6%96%B9%E6%B3%95/" class="article-date">
-  <time class="dt-published" datetime="2022-12-31T03:07:51.000Z" itemprop="datePublished">2022-12-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/12/31/iOS%E8%8E%B7%E5%8F%96%E8%AE%BE%E5%A4%87%E7%9A%84sysdiagnose%E7%9A%84%E6%96%B9%E6%B3%95/">iOS获取设备的sysdiagnose的方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener" href="https://blog-1253679463.cos.ap-hongkong.myqcloud.com/videos/iOS%20%E3%83%86%E3%82%99%E3%83%8F%E3%82%99%E3%82%A4%E3%82%B9%E3%81%A6%E3%82%99%E3%81%AE%20sysdiagnose%20%E3%81%AE%E5%8F%96%E5%BE%97%E6%96%B9%E6%B3%95.mp4">[腾讯云] iOS デバイスでの sysdiagnose の取得方法.mp4</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/12/31/iOS%E8%8E%B7%E5%8F%96%E8%AE%BE%E5%A4%87%E7%9A%84sysdiagnose%E7%9A%84%E6%96%B9%E6%B3%95/" data-id="clcc1jpoh0001kxok4xqp6rus" data-title="iOS获取设备的sysdiagnose的方法" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-0-2岁接种疫苗的不同" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/12/26/0-2%E5%B2%81%E6%8E%A5%E7%A7%8D%E7%96%AB%E8%8B%97%E7%9A%84%E4%B8%8D%E5%90%8C/" class="article-date">
-  <time class="dt-published" datetime="2022-12-26T13:29:35.000Z" itemprop="datePublished">2022-12-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/12/26/0-2%E5%B2%81%E6%8E%A5%E7%A7%8D%E7%96%AB%E8%8B%97%E7%9A%84%E4%B8%8D%E5%90%8C/">0-2岁接种疫苗的不同</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>最近疫情频发，下班了就不断搜索相关知识。<br>突然看到了一个 0-2 岁的儿童接种疫苗的帖子，为了将来小孩儿的健康，细细阅读了一下。<br>保存一下内地，香港和日本的 0-2 岁接种疫苗的内容。</p>
-<h1 id="香港和内地"><a href="#香港和内地" class="headerlink" title="香港和内地"></a>香港和内地</h1><p><img src="https://cdn.nlark.com/yuque/0/2022/png/174310/1672061615880-fb00b8fb-9f7e-4dcc-9008-370891c58a34.png#averageHue=%23fbfbf8&clientId=u195b857b-ecf3-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=575&id=ua5628e67&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1150&originWidth=777&originalType=binary%E2%88%B6=1&rotation=0&showTitle=false&size=433595&status=done&style=none&taskId=ue0c809a3-9b4c-40b9-b00a-0a71182acd2&title=&width=388.5" alt="image.png"></p>
-<h1 id="日本"><a href="#日本" class="headerlink" title="日本"></a>日本</h1><p><img src="https://cdn.nlark.com/yuque/0/2022/jpeg/174310/1672061671346-84fa2885-6350-44b0-a794-dac4731516b6.jpeg#averageHue=%23d4e5de&clientId=u195b857b-ecf3-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=ua3d29221&margin=%5Bobject%20Object%5D&name=schedule_age7.jpg&originHeight=595&originWidth=841&originalType=binary%E2%88%B6=1&rotation=0&showTitle=false&size=212052&status=done&style=none&taskId=uece0b8b1-2d0f-46d7-9269-402ffcac803&title=" alt="schedule_age7.jpg"></p>
-<h1 id="接种疫苗的种类比较"><a href="#接种疫苗的种类比较" class="headerlink" title="接种疫苗的种类比较"></a>接种疫苗的种类比较</h1><table>
-<thead>
-<tr>
-<th>年龄</th>
-<th>内地</th>
-<th>香港</th>
-<th>日本</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>出生</td>
-<td>卡介苗（BCG）</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>乙肝（HepB）</td>
-<td>卡介苗（BCG）</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>乙肝（HepB）</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>1 个月</td>
-<td>乙肝（HepB）</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>2 个月</td>
-<td>小儿麻痹（Polio）</td>
-<td>六联 [6 in 1]</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>3 个月</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>4 个月</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>5 个月</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>6 个月</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><ol>
-<li></li>
-<li></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/12/26/0-2%E5%B2%81%E6%8E%A5%E7%A7%8D%E7%96%AB%E8%8B%97%E7%9A%84%E4%B8%8D%E5%90%8C/" data-id="clcc1jpoa0000kxokdpbahjwu" data-title="0-2岁接种疫苗的不同" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-在语雀上书写，通过hexo桥接来发布博客" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-在语雀上书写，通过hexo桥接来发布博客" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/12/22/%E5%9C%A8%E8%AF%AD%E9%9B%80%E4%B8%8A%E4%B9%A6%E5%86%99%EF%BC%8C%E9%80%9A%E8%BF%87hexo%E6%A1%A5%E6%8E%A5%E6%9D%A5%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2/" class="article-date">
   <time class="dt-published" datetime="2022-12-22T08:55:33.000Z" itemprop="datePublished">2022-12-22</time>
@@ -274,8 +95,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/12/22/%E5%9C%A8%E8%AF%AD%E9%9B%80%E4%B8%8A%E4%B9%A6%E5%86%99%EF%BC%8C%E9%80%9A%E8%BF%87hexo%E6%A1%A5%E6%8E%A5%E6%9D%A5%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2/">在语雀上书写，通过hexo桥接来发布博客</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      在语雀上书写，通过hexo桥接来发布博客
     </h1>
   
 
@@ -434,151 +255,28 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-搭建 Pluto 测试环境" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/12/21/%E6%90%AD%E5%BB%BA%20Pluto%20%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/" class="article-date">
-  <time class="dt-published" datetime="2022-12-21T07:36:56.000Z" itemprop="datePublished">2022-12-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2022/12/26/0-2%E5%B2%81%E6%8E%A5%E7%A7%8D%E7%96%AB%E8%8B%97%E7%9A%84%E4%B8%8D%E5%90%8C/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/12/21/%E6%90%AD%E5%BB%BA%20Pluto%20%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/">搭建 Pluto 测试环境</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="0-介绍"><a href="#0-介绍" class="headerlink" title="0 介绍"></a>0 介绍</h1><p>Pluto 是一个独立的用户管理系统，它可以用来搭建一个测试环境，并且可以自动化地搭建一个简单的网站。 这个项目源自于简单日语团队的其中一位创始人: <a target="_blank" rel="noopener" href="https://github.com/leeif">leeif</a>。</p>
-<h1 id="1-环境需求"><a href="#1-环境需求" class="headerlink" title="1 环境需求"></a>1 环境需求</h1><ol>
-<li>Go Version，需要 &gt;&#x3D; 1.13, &lt;&#x3D; 1.16</li>
-<li>MySQL，5.7+<ol>
-<li>Mac 系统的话，可以通过 brew 来安装</li>
-<li>如果像我这样，用 brew 的方法安装有问题的话，可以下载 DMG 文件来安装，不过官方已经不提供下载了，我找到的是：<a target="_blank" rel="noopener" href="http://ftp.iij.ad.jp/pub/db/mysql/Downloads/MySQL-5.7/mysql-5.7.25-macos10.14-x86_64.dmg">http://ftp.iij.ad.jp/pub/db/mysql/Downloads/MySQL-5.7/mysql-5.7.25-macos10.14-x86_64.dmg</a></li>
-</ol>
-</li>
-</ol>
-<h1 id="2-安装和启动"><a href="#2-安装和启动" class="headerlink" title="2. 安装和启动"></a>2. 安装和启动</h1><ol>
-<li>git clone <a href="mailto:git@github.com">git@github.com</a>:MuShare&#x2F;pluto.git</li>
-<li>打开 pluto 目录，在项目根目录创建配置文件，config.yaml 或者 config.json，这边采用 yaml 格式</li>
-</ol>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">misc:</span></span><br><span class="line">  <span class="attr">env:</span> <span class="string">&quot;dev&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8080</span></span><br><span class="line">  <span class="attr">skip_register_verify_mail:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">database:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&quot;mysql&quot;</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">&quot;localhost&quot;</span></span><br><span class="line">  <span class="attr">user:</span> <span class="string">&quot;root&quot;</span></span><br><span class="line">  <span class="attr">password:</span> <span class="string">&quot;12345678&quot;</span></span><br><span class="line">  <span class="attr">db:</span> <span class="string">&quot;pluto&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">log:</span></span><br><span class="line">  <span class="attr">file:</span> <span class="string">&quot;/tmp/pluto-test.log&quot;</span></span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>需要创建一些表格，pluto 提供了 migrate 的命令行</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">make migrate-binary-build</span><br><span class="line">./bin/pluto-migrate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果成功的话会在终端看到SUCCESS的提示</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>启动服务</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make server-binary-build</span><br><span class="line">./bin/pluto-server --config.file config.yaml</span><br></pre></td></tr></table></figure>
-
-<p>服务器启动之后可以访问 <a target="_blank" rel="noopener" href="http://localhost:8010/web/login">http://localhost:8010/web/login</a> 具体的 API 可以查看 pluto&#x2F;docs&#x2F;api.md 所有的 API 请求都是 JSON 格式。</p>
-<ol start="5">
-<li>新建 Application 如果没有新建 Application 的话，那么就无法进行后续的操作了</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST \</span><br><span class="line">  -H <span class="string">&#x27;Content-Type: application/json&#x27;</span> \</span><br><span class="line">  -d <span class="string">&#x27;&#123;&quot;name&quot;: &quot;easyjapanese&quot;&#125;&#x27;</span> \</span><br><span class="line">  http://127.0.0.1:8010/v1/rbac/application/create</span><br></pre></td></tr></table></figure>
-
-<ol start="6">
-<li>新建用户 Pluto 目前支持的用户注册方式是邮件，还可以绑定微信，谷歌和苹果账号，这边采用邮件注册。 在 config 里面配置了 skip_register_verify_mail，所以不需要验证邮箱。</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST \</span><br><span class="line">  -H <span class="string">&#x27;Content-Type: application/json&#x27;</span> \</span><br><span class="line">  -d <span class="string">&#x27;&#123;&quot;mail&quot;:&quot;helloworld@gmail.com&quot;, &quot;name&quot;:&quot;helloworld&quot;, &quot;password&quot;:&quot;123456&quot;, &quot;app_id&quot;: &quot;easyjapanese&quot;, &quot;user_id&quot;: &quot;helloworld&quot; &#125;&#x27;</span> \</span><br><span class="line">  http://127.0.0.1:8010/v1/user/register</span><br></pre></td></tr></table></figure>
-
-<ol start="7">
-<li>登录 通过登录，我们可以获取 refresh_token 和 access_token。</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST \</span><br><span class="line">  -H <span class="string">&#x27;Content-Type: application/json&#x27;</span> \</span><br><span class="line">  -d <span class="string">&#x27;&#123;&quot;account&quot;:&quot;helloworld@gmail.com&quot;, &quot;password&quot;:&quot;123456&quot;, &quot;device_id&quot;:null, &quot;app_id&quot;:&quot;easyjapanese&quot;&#125;&#x27;</span> \</span><br><span class="line">  http://127.0.0.1:8010/v1/user/login/account</span><br></pre></td></tr></table></figure>
-
-<ol start="8">
-<li>删除用户 删除的时候我们需要 JWT，也就是登录的时候获得的 access_token，将这个 Token 放在请求头里面。</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST \</span><br><span class="line">  -H <span class="string">&#x27;Content-Type: application/json&#x27;</span> \</span><br><span class="line">  -H <span class="string">&quot;Authorization: Bearer <span class="variable">$access_token</span>&quot;</span> \</span><br><span class="line">  http://127.0.0.1:8010/v1/user/delete</span><br></pre></td></tr></table></figure>
-
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
-<li><a target="_blank" rel="noopener" href="https://linuxize.com/post/curl-post-request/">https://linuxize.com/post/curl-post-request/</a></li>
-<li><a target="_blank" rel="noopener" href="https://reqbin.com/req/c-dwjszac0/curl-post-json-example">https://reqbin.com/req/c-dwjszac0/curl-post-json-example</a></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/12/21/%E6%90%AD%E5%BB%BA%20Pluto%20%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/" data-id="clcc1jpon0004kxok7ign7e0m" data-title="搭建 Pluto 测试环境" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-在同一台设备上创建多个账户来访问git" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/12/21/%E5%9C%A8%E5%90%8C%E4%B8%80%E5%8F%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E8%B4%A6%E6%88%B7%E6%9D%A5%E8%AE%BF%E9%97%AEgit/" class="article-date">
-  <time class="dt-published" datetime="2022-12-21T07:30:51.000Z" itemprop="datePublished">2022-12-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          0-2岁接种疫苗的不同
         
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/12/21/%E5%9C%A8%E5%90%8C%E4%B8%80%E5%8F%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E8%B4%A6%E6%88%B7%E6%9D%A5%E8%AE%BF%E9%97%AEgit/">在同一台设备上创建多个账户来访问git</a>
-    </h1>
   
+    <a href="/2022/12/21/%E6%90%AD%E5%BB%BA%20Pluto%20%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">搭建 Pluto 测试环境</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="0-介绍"><a href="#0-介绍" class="headerlink" title="0 介绍"></a>0 介绍</h2><p>经常有这样的需求，需要在同一台设备上同时用多个 git 账号来工作。今天就尝试来解决这个问题。 git 支持 https 和 ssh 协议，要解决上面的需求一般就选择 ssh 协议比较好。</p>
-<h2 id="1-配置文件"><a href="#1-配置文件" class="headerlink" title="1 配置文件"></a>1 配置文件</h2><p>ssh 有一个配置文件，路径通常是 ~&#x2F;.ssh&#x2F;config，里面配置了各个 ssh 账号的 Host，密钥等信息。 具体的文档可以参考：<a target="_blank" rel="noopener" href="https://www.ssh.com/academy/ssh/config">https://www.ssh.com/academy/ssh/config</a> 例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host *</span><br><span class="line">  AddKeysToAgent <span class="built_in">yes</span></span><br><span class="line">  UseKeychain <span class="built_in">yes</span></span><br><span class="line">  IdentityFile ~/.ssh/id_ed25519</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-新增一个配置"><a href="#2-新增一个配置" class="headerlink" title="2 新增一个配置"></a>2 新增一个配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t ed25519 -C <span class="string">&quot;demo@gmail.com&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>然后就可以在 ~&#x2F;.ssh&#x2F; 下面看到新增了一个私钥和一个公钥，然后将公钥上传到 github 的 Profile -&gt; SSH and GPG keys -&gt; New SSH key</p>
-<h2 id="3-修改-ssh-config-文件"><a href="#3-修改-ssh-config-文件" class="headerlink" title="3 修改 ssh config 文件"></a>3 修改 ssh config 文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host demo</span><br><span class="line">  HostName github.com</span><br><span class="line">  AddKeysToAgent <span class="built_in">yes</span></span><br><span class="line">  UseKeychain <span class="built_in">yes</span></span><br><span class="line">  IdentityFile ~/.ssh/id_demo_ed25519</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-clone"><a href="#4-clone" class="headerlink" title="4 clone"></a>4 clone</h2><p>加入我们对应的项目在 github 上的 ssh clone 的 remote 地址为：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git@github.com:xxx/yyy.git</span><br></pre></td></tr></table></figure>
-
-<p>那么在配置之后我们在 clone 的时候需要改为</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@demo:xxx/yyy.git</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/12/21/%E5%9C%A8%E5%90%8C%E4%B8%80%E5%8F%B0%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E8%B4%A6%E6%88%B7%E6%9D%A5%E8%AE%BF%E9%97%AEgit/" data-id="clcc1jpok0002kxok8rmnfm63" data-title="在同一台设备上创建多个账户来访问git" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
 
 
 </section>
